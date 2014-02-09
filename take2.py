@@ -14,14 +14,14 @@ class FullScreenApp(object):
        
         tab=ttk.Notebook(master)
         tab.pack(side = 'left', anchor = 'nw', fill = 'y', expand= 'yes')
-        pg1 = tk.Frame(bg = 'green')
-        pg2 = tk.Frame(bg = 'blue')
+        pg1 = tk.Frame(bg = 'deep pink')
+        pg2 = tk.Frame(bg = 'purple')
         tab.add(pg1, text= 'MOVE')
         tab.add(pg2, text= 'STYLE')
         self.moves(pg1, master)
         self.style(pg2, master)
         
-        execute = tk.Button(root, text="Execute", command= lambda: self.run(), bd = 15, bg = 'yellow', padx = 10, pady = 10)
+        execute = tk.Button(root, text="Execute", command= lambda: self.run(), bg = 'lime green', padx = 10, pady = 10)
         execute.pack(side='bottom')
         
         master.bind('<Escape>',self.toggle_geom)
@@ -32,36 +32,36 @@ class FullScreenApp(object):
         self._geom=geom
 
     def moves(self, pg1, master):
-        forward = tk.Button(pg1, text="Forward", command= lambda: self.dispForward(master), bd = 12)
+        forward = tk.Button(pg1, text="Forward", command= lambda: self.dispForward(master))
         forward.pack(side='top', anchor='nw', padx=50, pady=5)
         
-        backward = tk.Button(pg1, text="Backward", command= lambda: self.dispBackward(master), bd = 12)
+        backward = tk.Button(pg1, text="Backward", command= lambda: self.dispBackward(master))
         backward.pack(side='top', anchor='nw', padx=50, pady=5)
         
-        left = tk.Button(pg1, text="Left", command= lambda: self.dispLeft(master), bd = 12)
+        left = tk.Button(pg1, text="Left", command= lambda: self.dispLeft(master))
         left.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        right = tk.Button(pg1, text="Right", command= lambda: self.dispRight(master), bd = 12)
+        right = tk.Button(pg1, text="Right", command= lambda: self.dispRight(master))
         right.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        circle = tk.Button(pg1, text="Circle", command= lambda: self.dispCircle(master), bd = 12)
+        circle = tk.Button(pg1, text="Circle", command= lambda: self.dispCircle(master))
         circle.pack(side='top', anchor='nw', padx=50, pady=5)
 
 
     def style(self, pg2, master):
-        stamp = Button(pg2, text="Stamp", command= lambda: self.dispStamp(master), bd = 12)
+        stamp = Button(pg2, text="Stamp", command= lambda: self.dispStamp(master))
         stamp.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        penUp = Button(pg2, text="Pen Up", command= lambda: self.dispPenUp(master), bd = 12)
+        penUp = Button(pg2, text="Pen Up", command= lambda: self.dispPenUp(master))
         penUp.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        penDown = Button(pg2, text="Pen Down", command= lambda: self.dispPenDown(master), bd = 12)
+        penDown = Button(pg2, text="Pen Down", command= lambda: self.dispPenDown(master))
         penDown.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        color = Button(pg2, text="Color", command= lambda: self.dispColor(master), bd = 12)
+        color = Button(pg2, text="Color", command= lambda: self.dispColor(master))
         color.pack(side='top', anchor='nw', padx=50, pady=5)
 
-        clear = Button(pg2, text="Clear", command= lambda: self.dispClear(master), bd = 12)
+        clear = Button(pg2, text="Clear", command= lambda: self.dispClear(master))
         clear.pack(side='top', anchor='nw', padx=50, pady=5)
 
 
@@ -135,6 +135,7 @@ class FullScreenApp(object):
         
 
 root=tk.Tk()
+root["bg"] = "white"
 turtle.shape("turtle")
 cmdList = []
 
