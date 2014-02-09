@@ -47,6 +47,9 @@ class FullScreenApp(object):
         circle = tk.Button(pg1, text="Circle", command= lambda: self.dispCircle(master))
         circle.pack(side='top', anchor='nw', padx=50, pady=5)
 
+        goto = tk.Button(pg1, text='Goto', command = lambda: self.dispGoto(master))
+        goto.pack(side = 'top', anchor = 'nw', padx = 50, pady = 5)
+
 
     def style(self, pg2, master):
         stamp = Button(pg2, text="Stamp", command= lambda: self.dispStamp(master))
@@ -76,6 +79,8 @@ class FullScreenApp(object):
         turtle.right(90)
     def moveCircle(self):
         turtle.circle(50)
+    def moveGoto(self):
+        turtle.goto(0, 0)
     def StyStamp(self):
         turtle.stamp()
     def StyPenUp(self):
@@ -95,23 +100,33 @@ class FullScreenApp(object):
         fwd = Label(master, text = "turtle.forward(100)")
         fwd.pack(side='top', anchor = 'nw')
         cmdList.append(self.moveForward);
-        #cmdList
+        
+
     def dispBackward(self, master):
         bkwd = Label(master, text = "turtle.backward(100)")
         bkwd.pack()
         cmdList.append(self.moveBackward);
+        
     def dispLeft(self, master):
         l = Label(master, text = "turtle.left(90)")
         l.pack()
         cmdList.append(self.moveLeft);
+        
     def dispRight(self, master):
         r = Label(master, text = "turtle.right(90)")
         r.pack()
         cmdList.append(self.moveRight);
+        
     def dispCircle(self, master):
         r = Label(master, text = "turtle.circle(50)")
         r.pack()
         cmdList.append(self.moveCircle);
+
+    def dispGoto(self, master):
+        r = Label(master, text = "turtle.goto('center')")
+        r.pack()
+        cmdList.append(self.moveGoto);
+        
     def dispStamp(self, master):
         r = Label(master, text = "turtle.stamp()")
         r.pack()
