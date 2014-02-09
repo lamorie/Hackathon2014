@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+      
         <activity 
             android:name="com.example.popnlearn.GameScreen" 
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
