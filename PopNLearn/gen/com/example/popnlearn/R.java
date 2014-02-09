@@ -29,7 +29,8 @@ public final class R {
         public static final int title=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_pop_nlearn=0x7f030000;
+        public static final int activity_game_screen=0x7f030000;
+        public static final int activity_pop_nlearn=0x7f030001;
     }
     public static final class menu {
         public static final int pop_nlearn=0x7f070000;
